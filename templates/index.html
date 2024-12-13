@@ -1,13 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accessible platform for education and job opportunities.">
+    <title>Inclusive Platform - Homepage</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <style>
+        /* Minimal inline styles for structure */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color:lightblue;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 1em;
+        }
+        .feature-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 2em 0;
+        }
+        .feature-buttons a {
+            padding: 1em 2em;
+            text-align: center;
+            color: white;
+            background-color: #0066cc;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+        .feature-buttons a:hover {
+            background-color: #00509e;
+        }
+        .profile-card {
+            border: 1px solid #ccc;
+            padding: 1em;
+            text-align: center;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Flask Demo</h1>
-    <p>This is the home page.</p>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to ......</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" aria-label="Home">Home</a></li>
+                <li><a href="#about" aria-label="About">About</a></li>
+                <li><a href="#contact" aria-label="Contact Us">Contact Us</a></li>
+                <li><a href="#help" aria-label="Help">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container">
+        <!-- User Profile Section -->
+        <section id="profile">
+            <div class="profile-card">
+                <img src="download.png" alt="Profile Picture" width="100" height="100">
+                <h2>User Name</h2>
+                <p>Brief bio or welcome message.</p>
+                <button>Edit Profile</button>
+            </div>
+        </section>
+
+        <!-- Feature Buttons Section -->
+        <section id="features" class="feature-buttons">
+            <a href="#post" aria-label="Post a job or opportunity">Post</a>
+            <a href="#get-hired" aria-label="Find jobs">Get Hired</a>
+            <a href="#upskill" aria-label="Learn new skills">Upskill</a>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Inclusive Platform. All Rights Reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="#terms" aria-label="Terms and Conditions">Terms & Conditions</a></li>
+                <li><a href="#privacy" aria-label="Privacy Policy">Privacy Policy</a></li>
+                <li><a href="#accessibility" aria-label="Accessibility Policy">Accessibility Policy</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>
-
