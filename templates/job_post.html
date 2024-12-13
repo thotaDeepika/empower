@@ -3,7 +3,7 @@
 {% block content %}
 <section class="post-job">
     <h2>Post a Job</h2>
-    <form action="/submit-job" method="POST">
+    <form action="/post-job" method="POST">
         <div class="form-group">
             <label for="job-title">Job Title:</label>
             <input type="text" id="job-title" name="job-title" required>
@@ -22,7 +22,6 @@
         <div class="form-group">
             <label for="job-type">Job Type:</label>
             <select id="job-type" name="job-type" required>
-                <option value="" disabled selected>Select Job Type</option>
                 <option value="full-time">Full-Time</option>
                 <option value="part-time">Part-Time</option>
                 <option value="contract">Contract</option>
@@ -33,26 +32,19 @@
 
         <div class="form-group">
             <label for="salary-range">Salary Range:</label>
-            <input type="text" id="salary-range" name="salary-range" placeholder="e.g., Rs 50,000 - Rs 70,000" required>
+            <input type="text" id="salary-range" name="salary-range" placeholder="e.g., Rs 50,000 - Rs 70,000">
         </div>
 
         <div class="form-group">
             <label for="skills">Required Skills:</label>
-            <textarea id="skills" name="skills" placeholder="e.g., JavaScript, Python, Communication" required></textarea>
+            <textarea id="skills" name="skills" placeholder="e.g., JavaScript, Python, Communication"></textarea>
         </div>
 
         <div class="form-group">
             <label for="description">Job Description:</label>
             <textarea id="description" name="description" required></textarea>
         </div>
-        <div class="form-group">
-            <label for="diversity-initiative">
-                <span style="display: inline-block; width: 80vw;">This job encourages applications from marginalized and underrepresented groups.</span>
-                <input type="checkbox" id="diversity-initiative" name="diversity-initiative">
 
-            </label>
-        </div>
-        
         <button type="submit" class="button">Post Job</button>
     </form>
 </section>
