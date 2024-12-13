@@ -103,7 +103,8 @@ def ghired():
 
 @app.route('/getlist')
 def getlist():
-    return render_template('getjob_list.html')
+    all_jobs = Job.query.all()
+    return render_template('getjob_list.html',jobs=all_jobs)
 
 @app.route('/speak', methods=['POST'])
 def speak():

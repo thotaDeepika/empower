@@ -141,7 +141,7 @@ body {
 .header {
     background-color: #000000; /* Modern blue color */
     color: white;
-    padding: 20px 0;
+    padding: 5px 0;
     text-align: center;
     position: sticky;
     top: 0;
@@ -165,7 +165,7 @@ nav a:hover {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
