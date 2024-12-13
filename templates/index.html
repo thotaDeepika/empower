@@ -3,62 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Accessible platform for education and job opportunities.">
+    <meta name="description" content="An inclusive platform for education and job opportunities. Empowering people to access learning, career growth, and professional connections.">
+    <meta name="author" content="Inclusive Platform">
+    <meta name="keywords" content="education, jobs, opportunities, inclusive platform, skills, career growth">
     <title>Inclusive Platform - Homepage</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Minimal inline styles for structure */
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
+
+        h1, h2 {
+            font-weight: 600;
+        }
+
+        h3 {
+            font-weight: 400;
+        }
+
         header, footer {
-            background-color:lightblue;
+            background: linear-gradient(135deg, #0066cc, #004a99);
             color: white;
-            padding: 1em;
+            padding: 2em;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+            margin-top: 1em;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
         .container {
             margin: 0 auto;
             max-width: 1200px;
-            padding: 1em;
+            padding: 2em 1em;
         }
+
         .feature-buttons {
             display: flex;
-            justify-content: space-around;
-            margin: 2em 0;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 3em;
         }
+
         .feature-buttons a {
-            padding: 1em 2em;
+            padding: 1.2em 2.5em;
             text-align: center;
             color: white;
             background-color: #0066cc;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s, transform 0.3s;
+            flex: 1;
+            min-width: 200px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+
         .feature-buttons a:hover {
             background-color: #00509e;
+            transform: translateY(-5px);
         }
+
+        .feature-buttons a:active {
+            background-color: #003d73;
+            transform: translateY(1px);
+        }
+
+        /* Profile Card */
         .profile-card {
-            border: 1px solid #ccc;
-            padding: 1em;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 2em;
             text-align: center;
-            border-radius: 8px;
-            background-color: #f9f9f9;
+            max-width: 350px;
+            margin: 0 auto;
+            transition: transform 0.3s;
+        }
+
+        .profile-card img {
+            border-radius: 50%;
+            margin-bottom: 1.5em;
+            width: 120px;
+            height: 120px;
+        }
+
+        .profile-card h2 {
+            margin: 0.5em 0;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .profile-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .profile-card button {
+            margin-top: 1.5em;
+            padding: 0.8em 2em;
+            font-size: 1rem;
+            border: none;
+            background-color: #0066cc;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .profile-card button:hover {
+            background-color: #00509e;
+        }
+
+        /* Footer Section */
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        footer nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            list-style: none;
+            margin-top: 1em;
+        }
+
+        footer nav ul li {
+            margin-right: 20px;
+        }
+
+        footer nav ul li a {
+            color: white;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        footer nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .feature-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .feature-buttons a {
+                min-width: 100%;
+            }
+
+            .profile-card {
+                width: 80%;
+                padding: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header>
-        <h1>Welcome to ......</h1>
+        <h1>Welcome !!</h1>
         <nav>
             <ul>
-                <li><a href="#home" aria-label="Home">Home</a></li>
-                <li><a href="#about" aria-label="About">About</a></li>
-                <li><a href="#contact" aria-label="Contact Us">Contact Us</a></li>
-                <li><a href="#help" aria-label="Help">Help</a></li>
+                <li><a href="#home" aria-label="Go to Home">Home</a></li>
+                <li><a href="#about" aria-label="Learn more about us">About</a></li>
+                <li><a href="#contact" aria-label="Contact us">Contact</a></li>
+                <li><a href="#help" aria-label="Get help and support">Help</a></li>
             </ul>
         </nav>
     </header>
@@ -68,31 +212,32 @@
         <!-- User Profile Section -->
         <section id="profile">
             <div class="profile-card">
-                <img src="download.png" alt="Profile Picture" width="100" height="100">
+                <img src="download.png" alt="User Profile Picture" width="120" height="120">
                 <h2>User Name</h2>
-                <p>Brief bio or welcome message.</p>
-                <button>Edit Profile</button>
+                <p>Welcome to your personal dashboard! Update your profile and explore available opportunities.</p>
+                <button onclick="window.location.href='#edit-profile';" aria-label="Edit your profile">Edit Profile</button>
             </div>
         </section>
 
         <!-- Feature Buttons Section -->
         <section id="features" class="feature-buttons">
-            <a href="#post" aria-label="Post a job or opportunity">Post</a>
-            <a href="#get-hired" aria-label="Find jobs">Get Hired</a>
-            <a href="#upskill" aria-label="Learn new skills">Upskill</a>
+            <a href="#post job opportunity(only for organisations)" aria-label="Post a job or opportunity">Post</a>
+            <a href="#get-hired" aria-label="Explore job opportunities">Get Hired</a>
+            <a href="#upskill" aria-label="Learn new skills to enhance your career">Upskill</a>
         </section>
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Inclusive Platform. All Rights Reserved.</p>
+        <p>&copy; 2024 Locally Hosted Platform. All Rights Reserved.</p>
         <nav>
             <ul>
-                <li><a href="#terms" aria-label="Terms and Conditions">Terms & Conditions</a></li>
-                <li><a href="#privacy" aria-label="Privacy Policy">Privacy Policy</a></li>
-                <li><a href="#accessibility" aria-label="Accessibility Policy">Accessibility Policy</a></li>
+                <li><a href="#terms" aria-label="View Terms and Conditions">Terms & Conditions</a></li>
+                <li><a href="#privacy" aria-label="View Privacy Policy">Privacy Policy</a></li>
+                <li><a href="#accessibility" aria-label="View Accessibility Policy">Accessibility Policy</a></li>
             </ul>
         </nav>
     </footer>
 </body>
 </html>
+

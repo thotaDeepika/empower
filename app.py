@@ -1,4 +1,11 @@
 from flask import Flask, render_template, request
+from gtts import gTTS
+
+
+text = "DEMO TEXT" 
+
+tts = gTTS(text=text, lang='hi')
+tts.save("output.mp3")
 
 app = Flask(__name__)
 
