@@ -96,7 +96,14 @@ def job_list():
 def job():
     return render_template('job.html')
 
+@app.route('/gethired')
+def ghired():
+    return render_template('getjob.html')
 # Text-to-speech route for reading page content
+
+@app.route('/getlist')
+def getlist():
+    return render_template('getjob_list.html')
 
 @app.route('/speak', methods=['POST'])
 def speak():

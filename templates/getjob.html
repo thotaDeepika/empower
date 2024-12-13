@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeker's Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 20px 0;
+        }
+
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header h1 a {
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 20px;
+            background-color: #000000;
+            color: white;
+        }
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Features Section */
+        .seeker-features {
+            display: flex;
+            justify-content: space-between;
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .feature {
+            text-align: center;
+            max-width: 300px;
+            margin: 10px;
+        }
+
+        .feature img {
+            width: 70px;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Job Highlights Section */
+        .job-highlights {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #ffffff;
+        }
+
+        .job-highlights h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .job-highlights p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .job-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .job-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .job-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .job-card p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .apply-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .apply-btn:hover {
+            background-color: #000000;
+        }
+
+        /* Call-to-Action Section */
+        .call-to-action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 20px;
+            background-color: #f4f7fa;
+        }
+
+        .call-to-action-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .call-to-action-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .call-to-action-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #ffffff;
+        }
+
+        .testimonial-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .testimonial-card p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card h4 {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .job-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .call-to-action {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .testimonial-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="/">Seeker's Hub</a></h1>
+            <nav>
+                <a href="/">Back</a>
+                <a href="/applications">Your Applications</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text animate__animated animate__fadeInDown">
+            <h2>Find Your Dream Job.</h2>
+            <h1>Connecting Talent to Opportunities.</h1>
+            <p>Explore openings and take the next step in your career journey.</p>
+            <a href="/getlist" class="button animate__animated animate__fadeInUp">Explore Jobs</a>
+        </div>
+        <div class="hero-image animate__animated animate__zoomIn">
+            <img src="https://img.freepik.com/free-vector/flat-employment-agency-search-new-employees-hire_88138-802.jpg" alt="Job Seekers Exploring Opportunities">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features seeker-features">
+        <div class="feature animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="1000">
+            <img src="https://cdn-icons-png.flaticon.com/512/295/295128.png" width="70px" alt="Easy Apply">
+            <h3>One-Click Apply</h3>
+            <p>Apply for jobs effortlessly with our streamlined process.</p>
+        </div>
+        <div class="feature animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="1000">
+            <img src="https://cdn-icons-png.flaticon.com/512/3565/3565418.png" width="70px" alt="Save Jobs">
+            <h3>Save Opportunities</h3>
+            <p>Bookmark jobs that interest you and apply at your convenience.</p>
+        </div>
+        <div class="feature animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="1000">
+            <img src="https://cdn-icons-png.flaticon.com/512/2436/2436747.png" width="70px" alt="Skill Matching">
+            <h3>Skill Matching</h3>
+            <p>Receive personalized job recommendations based on your skills.</p>
+        </div>
+    </section>
+    <!-- Job Highlights Section -->
+    <section class="job-highlights">
+        <h2 class="animate__animated animate__fadeInUp">Top Opportunities</h2>
+        <p class="animate__animated animate__fadeInUp">Featured job listings handpicked for you.</p>
+        <div class="job-cards animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="1000">
+            <div class="job-card">
+                <h3>Software Developer</h3>
+                <p>Location: Bangalore</p>
+                <p>Salary: ₹10 LPA</p>
+                <a href="/getlist" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="job-card">
+                <h3>Data Scientist</h3>
+                <p>Location: Hyderabad</p>
+                <p>Salary: ₹15 LPA</p>
+                <a href="/getlist" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="job-card">
+                <h3>UX Designer</h3>
+                <p>Location: Mumbai</p>
+                <p>Salary: ₹8 LPA</p>
+                <a href="/getlist" class="apply-btn">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="call-to-action">
+        <div class="call-to-action-text animate__animated animate__fadeInUp">
+            <h2>Ready to Take the Next Step?</h2>
+            <p>Showcase your skills, and stand out to recruiters.</p>
+            <a href="/getlist" class="button animate__animated animate__fadeInUp">Create Profile</a>
+        </div>
+        <div class="call-to-action-image animate__animated animate__zoomIn">
+            <img src="https://img.freepik.com/free-photo/hand-drawn-business-plans_53876-120217.jpg" alt="Build Your Profile">
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2 class="animate__animated animate__fadeInUp">What Our Users Say</h2>
+        <div class="testimonial-cards animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="1000">
+            <div class="testimonial-card">
+                <p>"This platform helped me land my dream job in just two weeks!"</p>
+                <h4>- Rahul S.</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"The job recommendations matched my skills perfectly."</p>
+                <h4>- Priya M.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
