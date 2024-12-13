@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<<<<<<< HEAD
 <!-- Header Section -->
 <header>
     <h1>Welcome to Inclusive Platform</h1>
@@ -31,20 +32,46 @@
 <section class="features">
     <div class="feature animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="1000">
         <img src="{{ url_for('static', filename='images/feature1.png') }}" alt="Feature 1">
+=======
+<section class="hero">
+    <div class="hero-text animate__animated animate__fadeInDown">
+        <h2>Empowering Communities.</h2>
+        <h1>Connecting People to Opportunities.</h1>
+        <p>Find the perfect job or post your openings. Let's build a brighter future together.</p>
+        <a href="/jobs" class="button animate__animated animate__fadeInUp">Explore Jobs</a>
+    </div>
+    <div class="hero-image animate__animated animate__zoomIn">
+        <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2015-12/27/full/1451154907-5774.jpg?im=FeatureCrop,size=(826,465)" alt="People being offered jobs">
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="1000">
+        <img src="https://cdn-icons-png.flaticon.com/512/393/393790.png" width="70px" alt="Feature 1">
+>>>>>>> refs/remotes/origin/kay
         <h3>Easy Job Search</h3>
         <p>Find your ideal job with our intuitive search filters and advanced matching.</p>
     </div>
     <div class="feature animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="1000">
+<<<<<<< HEAD
         <img src="{{ url_for('static', filename='images/feature2.png') }}" alt="Feature 2">
+=======
+        <img src="https://e7.pngegg.com/pngimages/118/15/png-clipart-employer-labor-taste-recipe-company-e-learning-miscellaneous-company.png" width="70px" height="150px" alt="Feature 2">
+>>>>>>> refs/remotes/origin/kay
         <h3>Employer Solutions</h3>
         <p>Reach the right talent with our targeted job posting and recruitment tools.</p>
     </div>
     <div class="feature animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="1000">
+<<<<<<< HEAD
         <img src="{{ url_for('static', filename='images/feature3.png') }}" alt="Feature 3">
+=======
+        <img src="https://www.designedtoinspire.com/blog/wp-content/uploads/2019/05/accessibility-symbol.png" width="70px" height="200px" alt="Feature 3">
+>>>>>>> refs/remotes/origin/kay
         <h3>Accessible Platform</h3>
         <p>Our platform is designed with accessibility in mind, ensuring everyone has equal opportunity.</p>
     </div>
 </section>
+<<<<<<< HEAD
 
 <!-- Call to Action Section -->
 <section class="call-to-action">
@@ -70,4 +97,17 @@
     </nav>
 </footer>
 {% endblock %}
+=======
+>>>>>>> refs/remotes/origin/kay
 
+<section class="call-to-action">
+    <div class="call-to-action-text animate__animated animate__fadeInUp">
+        <h2>Ready to Take the Next Step?</h2>
+        <p>Join our community today. Find your dream job or connect with top talent.</p>
+        <a href="/post-job" class="button animate__animated animate__fadeInUp">Post a Job</a>
+    </div>
+    <div class="call-to-action-image animate__animated animate__zoomIn">
+        <img src="https://img.freepik.com/premium-photo/corporate-women-empowerment-portrait-team-with-smile-hr-department-creative-marketing-startup-teamwork-diversity-confident-group-happy-women-ideas-human-resources-office_590464-146726.jpg" alt="Call-to-Action Image">
+    </div>
+</section>
+{% endblock %}
