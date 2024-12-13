@@ -1,0 +1,398 @@
+.post-job {
+    padding: 40px;
+    background-color: #ffffff; /* White background for post job section */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for depth */
+    margin-bottom: 30px;
+    transition: transform 0.3s; /* Add transition for hover effect */
+}
+
+.post-job:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.post-job h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #007BFF; /* Change heading color to match the theme */
+}
+
+.post-job label {
+    margin: 10px 0 5px;
+    font-weight: bold; /* Make labels bold for better visibility */
+    color: #333; /* Darker color for better contrast */
+}
+
+.post-job input, .post-job textarea, .post-job select {
+    padding: 12px; /* Increased padding for better touch targets */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px; /* Increased font size for readability */
+    transition: border-color 0.3s; /* Transition for input focus */
+}
+
+.post-job input:focus, .post-job textarea:focus, .post-job select:focus {
+    border-color: #007BFF; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.post-job button {
+    align-self: flex-start; /* Align button to the left */
+    background-color: #28A745; /* Modern green color */
+    color: white;
+    padding: 15px 30px;
+    border: none; /* Remove default border */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s, transform 0.3s; /* Add transition for hover effect */
+}
+
+.post-job button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Job Listings Section */
+.job-listings {
+    padding: 40px;
+    background-color: #ffffff; /* White background for job listings */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Job Card Styles */
+.job {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    transition: box-shadow 0.3s; /* Add shadow effect */
+}
+
+.job:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+}
+
+.job h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #007BFF; /* Change job title color */
+}
+
+.job p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* About and Contact Sections */
+.about, .contact {
+    padding: 40px;
+    background-color: #ffffff; /* White background for content sections */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.about h2, .contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #007BFF; /* Change heading color */
+}
+
+.about p, .contact p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Contact Form Styles */
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact label {
+    margin: 10px 0 5px;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.contact button {
+    align-self: flex-start; /* Align button to the left */
+}
+
+/* Body and Header Styles */
+body {
+    font-family: ' Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* Light background for modern look */
+    color: #333;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: #000000; /* Modern blue color */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ddd;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #010101; /* Match header color */
+    color: white;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #ddd;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.hero-text {
+    flex: 1;
+    margin-right: 50px;
+    text-align: left;
+}
+
+.hero-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #28A745; /* Modern green color */
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05);
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.feature {
+    flex: 1 0 300px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.call-to-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.call-to-action-text {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.call-to-action-image {
+    flex: 1;
+    text-align: right;
+}
+
+.call-to-action-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .call-to-action {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .call-to-action-image {
+        margin-top: 20px;
+    }
+}
+
+.post-job form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="checkbox"] {
+    margin: 0; /* Removes any default margin around the checkbox */
+}
+
+span {
+    font-size: 0.95rem; /* Optional: Adjust text size for better alignment */
+}
+
