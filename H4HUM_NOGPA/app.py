@@ -1,8 +1,9 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, send_file
 from forms.job_form import JobForm
 from utils.accessibility import text_to_speech
 from config import Config  # Import the Config class
-
+from gtts import gTTS
+import os
 app = Flask(__name__)
 app.config.from_object(Config)  # Load configurations
 
@@ -19,6 +20,9 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/job')
+def job():
+    return render_template('job.html')
 # Contact route
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -63,6 +67,16 @@ def read_aloud():
     text = request.form.get('text')
     audio_file = text_to_speech(text)
     return redirect(audio_file)
+@app.route('/speak', methods=['POST'])
+def speak():
+    data = request.get_json()
+    text = data['text']
+    
+    tts = gTTS(text=text, lang='en')
+    audio_file = 'output.mp3'
+    tts.save(audio_file)
+    
+    return send_file(audio_file, mimetype='audio/mpeg', as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
