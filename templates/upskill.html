@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upskilling Resources | Empower Your Career</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         :root {
-            --primary-color:black;
-            --secondary-color: lightgreen;
-            --background-light: #f4f6f9;
-            --text-dark: #333;
+            --primary-color: #000000;
+            --secondary-color: #141514;
+            --text-light: #F8F9FA;
+            --text-dark: #343A40;
+            --background-light: #F1F3F5;
+            --background-dark: #212529;
             --transition-speed: 0.3s;
         }
 
@@ -26,71 +29,76 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--background-light);
+            overflow-x: hidden;
+            transition: all var(--transition-speed);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 200px;
+            padding: 0 50px;
         }
 
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
+            color: var(--text-light);
             text-align: center;
-            padding: 2rem 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
         }
 
         .nav-tabs {
             display: flex;
             justify-content: center;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: var(--background-light);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             padding: 1rem;
+            border-radius: 8px;
+            margin-top: -2rem;
         }
 
         .nav-tabs button {
             background: none;
             border: none;
-            padding: 0.75rem 1.5rem;
-            margin: 0 0.5rem;
+            padding: 1rem 2rem;
+            margin: 0 1rem;
             cursor: pointer;
             font-weight: 600;
             color: var(--text-dark);
-            border-bottom: 2px solid transparent;
+            border-radius: 5px;
             transition: var(--transition-speed);
         }
 
         .nav-tabs button:hover,
         .nav-tabs button.active {
             color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            transform: scale(1.1);
         }
 
         #content {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--background-light);
+            border-radius: 15px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
             margin: 2rem auto;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: calc(100vh-200px);
+            padding: 3rem;
+            min-height: calc(100vh - 250px);
+            transition: all var(--transition-speed);
         }
 
         .section {
             display: none;
             width: 100%;
-            max-width: 800px;
-            
-        
         }
 
         .section.active {
@@ -111,60 +119,62 @@
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .card {
             background-color: var(--background-light);
-            border-radius: 10px;
-            padding: 1.5rem;
+            border-radius: 15px;
+            padding: 2rem;
             text-align: center;
             transition: var(--transition-speed);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+            transition: transform var(--transition-speed);
         }
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .btn {
-            display: inlifne-block;
+            display: inline-block;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            border-radius: 8px;
             cursor: pointer;
+            text-decoration: none;
             transition: var(--transition-speed);
         }
 
         .btn:hover {
             opacity: 0.9;
-            transform: scale(1.05);
-        }
-
-        .skill-list {
-            list-style-type: none;
-        }
-
-        .skill-list li {
-            background-color: var(--background-light);
-            margin-bottom: 1rem;
-            padding: 1rem;
-            border-radius: 8px;
-            transition: var(--transition-speed);
-        }
-
-        .skill-list li:hover {
-            background-color: #e9ecef;
+            transform: scale(1.1);
         }
 
         footer {
-            background-color: var(--text-dark);
-            color: white;
+            background-color: var(--background-dark);
+            color: var(--text-light);
             text-align: center;
-            padding: 1.5rem 0;
+            padding: 2rem 0;
+            border-radius: 10px;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            font-size: 1rem;
         }
 
         @media screen and (max-width: 768px) {
@@ -175,31 +185,19 @@
             .nav-tabs button {
                 margin: 0.5rem 0;
             }
-        }
-    </style>
-    <script>
-        function speak() {
-            const selectedText = window.getSelection().toString();
-            if (selectedText) {
-                fetch('/speak', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ text: selectedText })
-                })
-                .then(response => response.blob())
-                .then(audioBlob => {
-                    const audioUrl = URL.createObjectURL(audioBlob);
-                    const audio = new Audio(audioUrl);
-                    audio.play();
-                });
-            } else {
-                alert('Please select some text to speak.');
+
+            header h1 {
+                font-size: 2rem;
             }
-        }
-    </script>
+
+            header p {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -209,19 +207,19 @@
     </header>
 
     <nav class="nav-tabs container">
+        <a href="/"><button>Back</button></a>
         <button onclick="switchSection('intro')" class="active">Introduction</button>
         <button onclick="switchSection('trending')">Trending Skills</button>
         <button onclick="switchSection('courses')">Free Courses</button>
         <button onclick="switchSection('government')">Government Resources</button>
         <button onclick="switchSection('additional')">Additional Resources</button>
-        <button onclick="speak()">Speak Selected Text</button>
     </nav>
 
     <main id="content" class="container">
         <section id="intro" class="section active">
             <h2>Empowering Economic Growth Through Upskilling</h2>
             <p>Upskilling is crucial for economically disadvantaged and disabled individuals to promote economic empowerment, social inclusion, and independence. By providing targeted digital skills training, we can create opportunities for meaningful employment and entrepreneurship.</p>
-            <img src="C:\Users\Rockstar\Desktop\0.side project\hackathon\H4HUM_NOGPA\templates" alt="Upskilling and Career Development" style="width:50%; border-radius:10px; margin-top:1rem;margin-left: 160px;">
+            <img src="https://duws858oznvmq.cloudfront.net/Upskilling_for_Career_Change_7a9cf89f5b.webp" alt="Upskilling and Career Development" style="width:50%; border-radius:15px; margin-top:1rem;margin-left: auto;margin-right: auto;display:block;">
         </section>
 
         <section id="trending" class="section">
@@ -230,20 +228,20 @@
                 <li>
                     <strong>Data Science</strong>
                     <p>Master data analysis, machine learning, and predictive modeling techniques.</p>
-                    <p>.</p>
                     <a href="#" class="btn">Explore Courses</a>
+                    <img src="https://cdn.prod.website-files.com/63ccf2f0ea97be12ead278ed/644a18b637053fa3709c5ba2_what-is-data-science.jpg" alt="Data Science" style="width:100%; border-radius:8px; margin-top:1rem;">
                 </li>
                 <li>
                     <strong>Digital Marketing</strong>
                     <p>Learn advanced SEO, social media strategy, and content marketing.</p>
-                    <p>.</p>
                     <a href="#" class="btn">Explore Courses</a>
+                    <img src="https://www.mdmarketingdigital.com/blog/wp-content/uploads/2024/01/que-es-el-marketing-digital-1-800x500.jpg" alt="Digital Marketing" style="width:100%; border-radius:8px; margin-top:1rem;">
                 </li>
                 <li>
                     <strong>Cloud Computing</strong>
                     <p>Develop expertise in AWS, Azure, and cloud infrastructure management.</p>
-                    <p>.</p>
                     <a href="#" class="btn">Explore Courses</a>
+                    <img src="https://pandorafms.com/blog/wp-content/uploads/2023/11/DALL%C2%B7E-2023-11-27-13.56.23-A-minimalistic-and-modern-illustration-for-a-blog-post-about-Cloud-Computing.-The-design-includes-simple-symbols-representing-cloud-storage-data-tran.png" alt="Cloud Computing" style="width:100%; border-radius:8px; margin-top:1rem;">
                 </li>
             </ul>
         </section>
@@ -254,67 +252,66 @@
                 <div class="card">
                     <h3>Web Development</h3>
                     <p>Comprehensive full-stack development training</p>
-                    <button class="btn">Enroll Now</button>
+                    <a href="https://www.freecodecamp.org/learn/" class="btn" target="_blank">Enroll Now</a>
+                    <img src="https://www.optimalvirtualemployee.com/wp-content/uploads/2022/12/Web-Developer-skill-1200x682.jpg" alt="Web Development" style="width:100%; border-radius:8px; margin-top:1rem;">
                 </div>
                 <div class="card">
-                    <h3>Digital Marketing</h3>
-                    <p>Advanced marketing strategies and techniques</p>
-                    <button class="btn">Enroll Now</button>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Beginner to advanced courses on AI technologies</p>
+                    <a href="https://www.coursera.org/specializations/machine-learning-introduction" class="btn" target="_blank">Enroll Now</a>
+                    <img src="https://miro.medium.com/v2/resize:fit:1400/1*6yhp6BhxSu-IOKo2_oSwEw.jpeg" alt="AI & ML" style="width:100%; border-radius:8px; margin-top:1rem;">
                 </div>
                 <div class="card">
-                    <h3>Data Science</h3>
-                    <p>Python, machine learning, and data analysis</p>
-                    <button class="btn">Enroll Now</button>
-                </div>
-                <div class="card">
-                    <h3>Soft Skills</h3>
-                    <p>Communication and leadership development</p>
-                    <button class="btn">Enroll Now</button>
+                    <h3>Cybersecurity</h3>
+                    <p>Secure your digital assets with the best cybersecurity practices</p>
+                    <a href="https://www.cybrary.it/course/compTIA-security/" class="btn" target="_blank">Enroll Now</a>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlIfhzOXAc13hgxc41Agj3jIArvf2QWP4u3A&s" alt="Cybersecurity" style="width:100%; border-radius:8px; margin-top:1rem;">
                 </div>
             </div>
         </section>
+        
+        </section>
 
         <section id="government" class="section">
-            <h2>Government Skill Development Initiatives</h2>
-            <ul class="skill-list">
-                <li>Skill India - National skill development and employment program</li>
-                <li>PMKVY - Skill training for youth employability</li>
-                <li>NSDC - Supporting skill development across sectors</li>
-                <li>Digital India - Transforming digital literacy nationwide</li>
+            <h2>Government & NGO Resources</h2>
+            <ul>
+                <li><a href="https://www.nsdcindia.org/" target="_blank">National Skill Development Corporation (NSDC)</a></li>
+                <li><a href="https://www.digitalindia.gov.in/" target="_blank">Digital India Programme</a></li>
+                <li><a href="https://www.msde.gov.in/" target="_blank">Ministry of Skill Development and Entrepreneurship (MSDE)</a></li>
             </ul>
         </section>
-
+        
         <section id="additional" class="section">
-            <h2>Additional Career Resources</h2>
-            <ul class="skill-list">
-                <li>Career guidance articles and webinars</li>
-                <li>Accessibility resources for diverse learners</li>
-                <li>Professional networking opportunities</li>
-                <li>Success stories and mentorship programs</li>
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><a href="https://www.coursera.org/" target="_blank">Coursera - Free Courses with Certification</a></li>
+                <li><a href="https://www.edx.org/" target="_blank">edX - Wide Range of Free Online Courses</a></li>
+                <li><a href="https://www.udemy.com/" target="_blank">Udemy - Paid and Free Technical Courses</a></li>
             </ul>
         </section>
+        
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy ; 2024 Upskilling Resources. Empowering Careers, Transforming Lives.</p>
-        </div>
+        <p>© 2024 Upskilling Resources. All rights reserved.</p>
     </footer>
 
     <script>
-        function switchSection(sectionId) {
-            // Remove active class from all sections and buttons
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
+        function switchSection(section) {
+            const sections = document.querySelectorAll('.section');
+            const buttons = document.querySelectorAll('.nav-tabs button');
+
+            sections.forEach((el) => {
+                el.classList.remove('active');
             });
-            document.querySelectorAll('.nav-tabs button').forEach(button => {
-                button.classList.remove('active');
+            buttons.forEach((el) => {
+                el.classList.remove('active');
             });
 
-            // Add active class to selected section and button
-            document.getElementById(sectionId).classList.add('active');
-            document.querySelector(`.nav-tabs button[onclick*="${sectionId}"]`).classList.add('active');
+            document.getElementById(section).classList.add('active');
+            document.querySelector(`.nav-tabs button[onclick="switchSection('${section}')"]`).classList.add('active');
         }
     </script>
 </body>
+
 </html>

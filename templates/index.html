@@ -213,13 +213,111 @@
                 alert('Please select some text to speak.');
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const accessibilityBtn = document.getElementById('accessibility-btn');
+            const accessibilityOptions = document.getElementById('accessibility-options');
+            const increaseFontSizeButton = document.getElementById('increase-font-size');
+            const decreaseFontSizeButton = document.getElementById('decrease-font-size');
+            const highContrastButton = document.getElementById('high-contrast-toggle');
+            const textToSpeechButton = document.getElementById('text-to-speech-toggle');
+            const stopReadingButton = document.getElementById('stop-reading');
+            let speechSynthesisInstance = null;
+    
+            // Toggle the visibility of the accessibility options dropdown
+            accessibilityBtn.addEventListener('click', function () {
+                if (accessibilityOptions.style.display === 'none' || accessibilityOptions.style.display === '') {
+                    accessibilityOptions.style.display = 'block';
+                } else {
+                    accessibilityOptions.style.display = 'none';
+                }
+            });
+    
+            // Function to increase font size
+            const increaseFontSize = () => {
+                let body = document.body;
+                let currentSize = window.getComputedStyle(body, null).getPropertyValue('font-size');
+                currentSize = parseFloat(currentSize);
+                body.style.fontSize = (currentSize + 2) + 'px'; // Increase by 2px
+            };
+    
+            // Function to decrease font size
+            const decreaseFontSize = () => {
+                let body = document.body;
+                let currentSize = window.getComputedStyle(body, null).getPropertyValue('font-size');
+                currentSize = parseFloat(currentSize);
+                body.style.fontSize = (currentSize - 2) + 'px'; // Decrease by 2px
+            };
+    
+            // Function to toggle high contrast mode
+            const toggleHighContrast = () => {
+                document.body.classList.toggle('high-contrast');
+            };
+    
+            // Function for text-to-speech (using the Web Speech API)
+            const textToSpeech = () => {
+                const text = document.body.innerText; // Get the text content of the page
+                speechSynthesisInstance = new SpeechSynthesisUtterance(text);
+                speechSynthesis.speak(speechSynthesisInstance);
+                stopReadingButton.style.display = 'inline-block'; // Show stop button
+            };
+    
+            // Function to stop reading
+            const stopReading = () => {
+                if (speechSynthesisInstance) {
+                    speechSynthesis.cancel(); // Stop the speech synthesis
+                    stopReadingButton.style.display = 'none'; // Hide stop button
+                }
+            };
+    
+            // Add event listeners for buttons
+            increaseFontSizeButton.addEventListener('click', increaseFontSize);
+            decreaseFontSizeButton.addEventListener('click', decreaseFontSize);
+            highContrastButton.addEventListener('click', toggleHighContrast);
+            textToSpeechButton.addEventListener('click', textToSpeech);
+            stopReadingButton.addEventListener('click', stopReading);
+        });
+        function speak() {
+            const selectedText = window.getSelection().toString();
+            if (selectedText) {
+                fetch('/speak', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ text: selectedText })
+                })
+                .then(response => response.blob())
+                .then(audioBlob => {
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    const audio = new Audio(audioUrl);
+                    audio.play();
+                });
+            } else {
+                alert('Please select some text to speak.');
+            }
+        }
     </script>
 </head>
 <body>
     <!-- Header Section -->
     <header>
-        <h1>Welcome !!</h1>
-        <nav>
+        <h1>Welcome Gitcat!!</h1>
+         <nav>
+                    <!-- Accessibility Button and Dropdown -->
+                    <div id="accessibility-toggle">
+                        <button id="accessibility-btn">
+                            <img id="iconimg1" src="https://www.shutterstock.com/image-vector/accessibility-icon-set-universal-access-260nw-2462102259.jpg" alt="Accessibility Icon" style="width: 100px; height: auto;">
+                        </button>
+                        <div id="accessibility-options" style="display: none;">
+                            <button id="increase-font-size">+</button>
+                            <button id="decrease-font-size">-</button>
+                            <button id="high-contrast-toggle">High Contrast</button>
+                            <button id="text-to-speech-toggle">Read Aloud</button>
+                            <button id="stop-reading" style="display: none;">Stop Reading</button>
+                        </div>
+         </nav>
+        <!-- <nav>
             <ul>
                 <li><a href="#home" aria-label="Go to Home">Home</a></li>
                 <li><a href="#about" aria-label="Learn more about us">About</a></li>
@@ -227,7 +325,7 @@
                 <li><a href="#help" aria-label="Get help and support">Help</a></li>
             </ul>
             <button onclick="speak()">Speak Selected Text</button>
-        </nav>
+        </nav> -->
     </header>
 
     <!-- Main Content Section -->
@@ -235,8 +333,8 @@
         <!-- User Profile Section -->
         <section id="profile">
             <div class="profile-card">
-                <img src="download.jpg" alt="User Profile Picture" width="120" height="120">
-                <h2>User Name</h2>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcJ-H4HgF8yyrtQ2D4vZ-DLI-_b5Tx8gq5EA&s" alt="User Profile Picture" width="120" height="120">
+                <h2>Gitcat</h2>
                 <p>Welcome to your personal dashboard! Update your profile and explore available opportunities.</p>
                 <button onclick="window.location.href='#edit-profile';" aria-label="Edit your profile">Edit Profile</button>
             </div>
@@ -244,15 +342,15 @@
 
         <!-- Feature Buttons Section -->
         <section id="features" class="feature-buttons">
-            <a href="/job" aria-label="Post a job or opportunity">Post job opportunities(for organisations only)</a>
+            <a href="/job" aria-label="Post a job or opportunity">Post job opportunities</a>
             <a href="/gethired" aria-label="Explore job opportunities">Get Hired</a>
-            <a href="/upskill" aria-label="Learn new skills to enhance your career">Upskill</a>
+            <a href="/upskill" aria-label="Learn new skills to enhance your career">UPSKILL</a>
         </section>
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Locally Hosted Platform. All Rights Reserved.</p>
+        <p>&copy; Team NO GPA</p>
         <nav>
             <ul>
                 <li><a href="#terms" aria-label="View Terms and Conditions">Terms & Conditions</a></li>
