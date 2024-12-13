@@ -30,6 +30,9 @@ class Job(db.Model):
 @app.route('/')
 def index():
     return render_template('index.html')
+@app.route('/upskill')
+def upskill():
+    return render_template('upskill.html')
 
 # About route
 @app.route('/about')

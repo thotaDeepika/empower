@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upskilling Resources | Empower Your Career</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color:black;
+            --secondary-color: lightgreen;
+            --background-light: #f4f6f9;
+            --text-dark: #333;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 200px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
+
+        .nav-tabs button {
+            background: none;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-dark);
+            border-bottom: 2px solid transparent;
+            transition: var(--transition-speed);
+        }
+
+        .nav-tabs button:hover,
+        .nav-tabs button.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        #content {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: calc(100vh-200px);
+        }
+
+        .section {
+            display: none;
+            width: 100%;
+            max-width: 800px;
+            
+        
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--background-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition-speed);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            display: inlifne-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition-speed);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        .skill-list {
+            list-style-type: none;
+        }
+
+        .skill-list li {
+            background-color: var(--background-light);
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: var(--transition-speed);
+        }
+
+        .skill-list li:hover {
+            background-color: #e9ecef;
+        }
+
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tabs button {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Upskilling Resources</h1>
+            <p>Empower yourself with skills for today's dynamic job market</p>
+        </div>
+    </header>
+
+    <nav class="nav-tabs container">
+        <button onclick="switchSection('intro')" class="active">Introduction</button>
+        <button onclick="switchSection('trending')">Trending Skills</button>
+        <button onclick="switchSection('courses')">Free Courses</button>
+        <button onclick="switchSection('government')">Government Resources</button>
+        <button onclick="switchSection('additional')">Additional Resources</button>
+    </nav>
+
+    <main id="content" class="container">
+        <section id="intro" class="section active">
+            <h2>Empowering Economic Growth Through Upskilling</h2>
+            <p>Upskilling is crucial for economically disadvantaged and disabled individuals to promote economic empowerment, social inclusion, and independence. By providing targeted digital skills training, we can create opportunities for meaningful employment and entrepreneurship.</p>
+            <img src="im.jpg" alt="Upskilling and Career Development" style="width:50%; border-radius:10px; margin-top:1rem;margin-left: 160px;">
+        </section>
+
+        <section id="trending" class="section">
+            <h2>Trending Skills in 2024</h2>
+            <ul class="skill-list">
+                <li>
+                    <strong>Data Science</strong>
+                    <p>Master data analysis, machine learning, and predictive modeling techniques.</p>
+                    <p>.</p>
+                    <a href="#" class="btn">Explore Courses</a>
+                </li>
+                <li>
+                    <strong>Digital Marketing</strong>
+                    <p>Learn advanced SEO, social media strategy, and content marketing.</p>
+                    <p>.</p>
+                    <a href="#" class="btn">Explore Courses</a>
+                </li>
+                <li>
+                    <strong>Cloud Computing</strong>
+                    <p>Develop expertise in AWS, Azure, and cloud infrastructure management.</p>
+                    <p>.</p>
+                    <a href="#" class="btn">Explore Courses</a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="courses" class="section">
+            <h2>Free Online Courses</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>Comprehensive full-stack development training</p>
+                    <button class="btn">Enroll Now</button>
+                </div>
+                <div class="card">
+                    <h3>Digital Marketing</h3>
+                    <p>Advanced marketing strategies and techniques</p>
+                    <button class="btn">Enroll Now</button>
+                </div>
+                <div class="card">
+                    <h3>Data Science</h3>
+                    <p>Python, machine learning, and data analysis</p>
+                    <button class="btn">Enroll Now</button>
+                </div>
+                <div class="card">
+                    <h3>Soft Skills</h3>
+                    <p>Communication and leadership development</p>
+                    <button class="btn">Enroll Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="government" class="section">
+            <h2>Government Skill Development Initiatives</h2>
+            <ul class="skill-list">
+                <li>Skill India - National skill development and employment program</li>
+                <li>PMKVY - Skill training for youth employability</li>
+                <li>NSDC - Supporting skill development across sectors</li>
+                <li>Digital India - Transforming digital literacy nationwide</li>
+            </ul>
+        </section>
+
+        <section id="additional" class="section">
+            <h2>Additional Career Resources</h2>
+            <ul class="skill-list">
+                <li>Career guidance articles and webinars</li>
+                <li>Accessibility resources for diverse learners</li>
+                <li>Professional networking opportunities</li>
+                <li>Success stories and mentorship programs</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy ; 2024 Upskilling Resources. Empowering Careers, Transforming Lives.</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchSection(sectionId) {
+            // Remove active class from all sections and buttons
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-tabs button').forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Add active class to selected section and button
+            document.getElementById(sectionId).classList.add('active');
+            document.querySelector(`.nav-tabs button[onclick*="${sectionId}"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
