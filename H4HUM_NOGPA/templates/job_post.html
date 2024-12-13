@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="post-job">
+    <h2>Post a Job</h2>
+    <form action="/submit-job" method="POST">
+        <label for="job-title">Job Title:</label>
+        <input type="text ```html
+" id="job-title" name="job-title" required>
+        
+        <label for="company-name">Company Name:</label>
+        <input type="text" id="company-name" name="company-name" required>
+        
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+        
+        <label for="description">Job Description:</label>
+        <textarea id="description" name="description" required></textarea>
+        
+        <button type="submit" class="button">Post Job</button>
+    </form>
+</section>
+{% endblock %}

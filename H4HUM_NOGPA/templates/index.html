@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-text animate__animated animate__fadeInDown">
+        <h2>Empowering Communities.</h2>
+        <h1>Connecting People to Opportunities.</h1>
+        <p>Find the perfect job or post your openings. Let's build a brighter future together.</p>
+        <a href="/jobs" class="button animate__animated animate__fadeInUp">Explore Jobs</a>
+    </div>
+    <div class="hero-image animate__animated animate__zoomIn">
+        <img src="{{ url_for('static', filename='images/hero.jpg') }}" alt="Hero Image">
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="1000">
+        <img src="{{ url_for('static', filename='images/feature1.png') }}" alt="Feature 1">
+        <h3>Easy Job Search</h3>
+        <p>Find your ideal job with our intuitive search filters and advanced matching.</p>
+    </div>
+    <div class="feature animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="1000">
+        <img src="{{ url_for('static', filename='images/feature2.png') }}" alt="Feature 2">
+        <h3>Employer Solutions</h3>
+        <p>Reach the right talent with our targeted job posting and recruitment tools.</p>
+    </div>
+    <div class="feature animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="1000">
+        <img src="{{ url_for('static', filename='images/feature3.png') }}" alt="Feature 3">
+        <h3>Accessible Platform</h3>
+        <p>Our platform is designed with accessibility in mind, ensuring everyone has equal opportunity.</p>
+    </div>
+</section>
+
+<section class="call-to-action">
+    <div class="call-to-action-text animate__animated animate__fadeInUp">
+        <h2>Ready to Take the Next Step?</h2>
+        <p>Join our community today. Find your dream job or connect with top talent.</p>
+        <a href="/post-job" class="button animate__animated animate__fadeInUp">Post a Job</a>
+    </div>
+    <div class="call-to-action-image animate__animated animate__zoomIn">
+        <img src="{{ url_for('static', filename='images/cta.jpg') }}" alt="Call-to-Action Image">
+    </div>
+</section>
+{% endblock %}
