@@ -1,109 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Job Portal</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
-    <style>
-        .job-card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 16px;
-            margin: 16px 0;
-            background-color: #f9f9f9;
-            transition: box-shadow 0.3s;
-        }
-        .job-card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .job-title {
-            font-size: 1.5em;
-            color: #333;
-            margin-bottom: 8px;
-        }
-        .job-description {
-            margin-bottom: 8px;
-        }
-        .job-location, .job-salary {
-            font-weight: bold;
-            color: #666;
-        }
-        .apply-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        .apply-btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1><a href="/">Seeker's Hub</a></h1>
-            <br>
-            <nav>
-                <a href="/">Back</a>
-                <a href="/">Your Job Applications</a>
-                <a href="/about">About Us</a>
-                <a href="/contact">Contact Us</a>
-                <div id="accessibility-toggle">
-                    <button id="accessibility-btn">
-                        <img id="iconimg1" src="https://www.shutterstock.com/image-vector/accessibility-icon-set-universal-access-260nw-2462102259.jpg" alt="Accessibility Icon" style="width: 100px; height: auto;">
-                    </button>
-                    <div id="accessibility-options" style="display: none;">
-                        <button id="increase-font-size">+</button>
-                        <button id="decrease-font-size">-</button>
-                        <button id="high-contrast-toggle">High Contrast</button>
-                        <button id="text-to-speech-toggle">Read Aloud</button>
-                        <button id="stop-reading" style="display: none;">Stop Reading</button>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <main class="container">
-        {% if jobs %}
-            <h2>Available Job Listings</h2>
-            <div id="job-listings">
-                {% for job in jobs %}
-                <div class="job-card" data-aos="fade-up">
-                    <h3 class="job-title">{{ job.title }}</h3>
-                    <p class="job-description">{{ job.description }}</p>
-                    <p class="job-location">Location: {{ job.location }}</p>
-                    <p class="job-salary">Salary: {{ job.salary }}</p>
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="job-listings">
+    <h2>Job Listings</h2>
+
+    <!-- Filters Section -->
+    <div class="filters">
+        <form action="/getlist" method="GET">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Filter by location">
+            
+            <label for="job_type">Job Type:</label>
+            <select id="job_type" name="job_type">
+                <option value="">Any</option>
+                <option value="full-time">Full-Time</option>
+                <option value="part-time">Part-Time</option>
+                <option value="contract">Contract</option>
+                <option value="internship">Internship</option>
+            </select>
+            
+            <label for="salary_range">Salary Range:</label>
+            <input type="text" id="salary_range" name="salary_range" placeholder="Filter by salary">
+            
+            <button type="submit">Apply Filters</button>
+        </form>
+    </div>
+
+    <!-- Job Listings Table -->
+    {% if jobs %}
+    <table>
+        <thead>
+            <tr>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Location</th>
+                <th>Job Type</th>
+                <th>Salary</th>
+                <th>Skills</th>
+                <th>Description</th>
+                <th>Apply</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}
+            <tr>
+                <td>{{ job.title }}</td>
+                <td>{{ job.company_name }}</td>
+                <td>{{ job.location }}</td>
+                <td>{{ job.job_type }}</td>
+                <td>{{ job.salary_range }}</td>
+                <td>{{ job.skills }}</td>
+                <td>{{ job.description }}</td>
+                <td>
                     <a href="/apply/{{ job.id }}" class="apply-btn">Apply</a>
-                </div>
-                {% endfor %}
-            </div>
-        {% else %}
-            <p>No job postings are available at the moment.</p>
-        {% endif %}
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; NO GPA</p>
-            <div class="social-media">
-                <a href="https://facebook.com" target="_blank">Facebook</a>
-                <a href="https://twitter.com" target="_blank">Twitter</a>
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-</body>
-</html>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>No job postings available at the moment.</p>
+    {% endif %}
+</section>
+{% endblock %}
