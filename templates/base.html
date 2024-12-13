@@ -7,17 +7,106 @@
     <title>Job Portal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const accessibilityBtn = document.getElementById('accessibility-btn');
+            const accessibilityOptions = document.getElementById('accessibility-options');
+            const increaseFontSizeButton = document.getElementById('increase-font-size');
+            const decreaseFontSizeButton = document.getElementById('decrease-font-size');
+            const highContrastButton = document.getElementById('high-contrast-toggle');
+            const textToSpeechButton = document.getElementById('text-to-speech-toggle');
+            const stopReadingButton = document.getElementById('stop-reading');
+            let speechSynthesisInstance = null;
+    
+            // Toggle the visibility of the accessibility options dropdown
+            accessibilityBtn.addEventListener('click', function () {
+                if (accessibilityOptions.style.display === 'none' || accessibilityOptions.style.display === '') {
+                    accessibilityOptions.style.display = 'block';
+                } else {
+                    accessibilityOptions.style.display = 'none';
+                }
+            });
+    
+            // Function to increase font size
+            const increaseFontSize = () => {
+                let body = document.body;
+                let currentSize = window.getComputedStyle(body, null).getPropertyValue('font-size');
+                currentSize = parseFloat(currentSize);
+                body.style.fontSize = (currentSize + 2) + 'px'; // Increase by 2px
+            };
+    
+            // Function to decrease font size
+            const decreaseFontSize = () => {
+                let body = document.body;
+                let currentSize = window.getComputedStyle(body, null).getPropertyValue('font-size');
+                currentSize = parseFloat(currentSize);
+                body.style.fontSize = (currentSize - 2) + 'px'; // Decrease by 2px
+            };
+    
+            // Function to toggle high contrast mode
+            const toggleHighContrast = () => {
+                document.body.classList.toggle('high-contrast');
+            };
+    
+            // Function for text-to-speech (using the Web Speech API)
+            const textToSpeech = () => {
+                const text = document.body.innerText; // Get the text content of the page
+                speechSynthesisInstance = new SpeechSynthesisUtterance(text);
+                speechSynthesis.speak(speechSynthesisInstance);
+                stopReadingButton.style.display = 'inline-block'; // Show stop button
+            };
+    
+            // Function to stop reading
+            const stopReading = () => {
+                if (speechSynthesisInstance) {
+                    speechSynthesis.cancel(); // Stop the speech synthesis
+                    stopReadingButton.style.display = 'none'; // Hide stop button
+                }
+            };
+    
+            // Add event listeners for buttons
+            increaseFontSizeButton.addEventListener('click', increaseFontSize);
+            decreaseFontSizeButton.addEventListener('click', decreaseFontSize);
+            highContrastButton.addEventListener('click', toggleHighContrast);
+            textToSpeechButton.addEventListener('click', textToSpeech);
+            stopReadingButton.addEventListener('click', stopReading);
+        });
+    </script>
+    
+    
+    
+    
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <h1><a href="/">Job Portal</a></h1>
+            <h1><a href="/">Employer's Hub</a></h1>
+            <br>
             <nav>
                 <a href="/">Home</a>
-                <a href="/post-job">Post Job</a>
-                <a href="/jobs">Job Listings</a>
-                <a href="/about">About</a>
-                <a href="/contact">Contact</a>
+                <a href="/post-job">Post a Job</a>
+                <a href="/jobs">Your Job Listings</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <!-- Accessibility Options -->
+                <!-- Accessibility Options Dropdown -->
+            <!-- Accessibility Button and Dropdown -->
+            <div id="accessibility-toggle">
+                <button id="accessibility-btn">
+                    <img id="iconimg1" src="https://www.shutterstock.com/image-vector/accessibility-icon-set-universal-access-260nw-2462102259.jpg" alt="Accessibility Icon" style="width: 100px; height: auto;">
+                </button>
+                <div id="accessibility-options" style="display: none;">
+                    <button id="increase-font-size">+</button>
+                    <button id="decrease-font-size">-</button>
+                    <button id="high-contrast-toggle">High Contrast</button>
+                    <button id="text-to-speech-toggle">Read Aloud</button>
+                    <button id="stop-reading" style="display: none;">Stop Reading</button>
+                </div>
+            </div>
+
+
+
+
             </nav>
         </div>
     </header>
@@ -25,12 +114,11 @@
         {% block content %}{% endblock %}
         <form action="/read-aloud" method="POST" id="tts-form">
             <input type="hidden" name="text" value="{{ content | safe }}">
-            <button type="submit">Read Aloud</button>
         </form>
     </main>
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2023 Job Portal</p>
+            <p>&copy; NO GPA</p>
             <div class="social-media">
                 <a href="https://facebook.com" target="_blank">Facebook</a>
                 <a href="https://twitter.com" target="_blank">Twitter</a>

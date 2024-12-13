@@ -396,3 +396,59 @@ span {
     font-size: 0.95rem; /* Optional: Adjust text size for better alignment */
 }
 
+/* Accessibility Toggle Button */
+#accessibility-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+#accessibility-btn {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#accessibility-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+#accessibility-options {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#accessibility-options button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#accessibility-options button:hover {
+    background-color: #ddd;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+    background-color: #000;
+    color: #fff;
+}
+
+.high-contrast a {
+    color: #ffcc00; /* Ensure links are visible in high contrast mode */
+}
