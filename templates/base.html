@@ -71,9 +71,27 @@
             textToSpeechButton.addEventListener('click', textToSpeech);
             stopReadingButton.addEventListener('click', stopReading);
         });
-    </script>
-    
-    
+        function speak() {
+            const selectedText = window.getSelection().toString();
+            if (selectedText) {
+                fetch('/speak', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ text: selectedText })
+                })
+                .then(response => response.blob())
+                .then(audioBlob => {
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    const audio = new Audio(audioUrl);
+                    audio.play();
+                });
+            } else {
+                alert('Please select some text to speak.');
+            }
+        }
+    </script>
     
     
 </head>
@@ -88,6 +106,7 @@
                 <a href="/jobs">Your Job Listings</a>
                 <a href="/about">About Us</a>
                 <a href="/contact">Contact Us</a>
+                <button style="width: 100px;" onclick="speak()">Speak Selected Text</button>
                 <!-- Accessibility Options -->
                 <!-- Accessibility Options Dropdown -->
             <!-- Accessibility Button and Dropdown -->

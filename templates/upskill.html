@@ -177,6 +177,28 @@
             }
         }
     </style>
+    <script>
+        function speak() {
+            const selectedText = window.getSelection().toString();
+            if (selectedText) {
+                fetch('/speak', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ text: selectedText })
+                })
+                .then(response => response.blob())
+                .then(audioBlob => {
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    const audio = new Audio(audioUrl);
+                    audio.play();
+                });
+            } else {
+                alert('Please select some text to speak.');
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -192,6 +214,7 @@
         <button onclick="switchSection('courses')">Free Courses</button>
         <button onclick="switchSection('government')">Government Resources</button>
         <button onclick="switchSection('additional')">Additional Resources</button>
+        <button onclick="speak()">Speak Selected Text</button>
     </nav>
 
     <main id="content" class="container">
